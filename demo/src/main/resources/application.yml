@@ -1,0 +1,30 @@
+#data_source
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:2484/demo? createDatabaseIfNotExist=true&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: root121
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 1GB
+      max-request-size: 1GB
+      enabled: true
+
+  #jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialet: org.hibernate.dialect.MySQL8Dialect
+
+#server
+server:
+  port: 9999
+
+#logging level for eureka
+logging:
+  level:
+    org.springframework.web: info
